@@ -1,4 +1,12 @@
 body {
-  margin : 0px;
+  margin: 50px;
+  text-align: center;
   font-family: arial, sans-serif;
+  background-color: lightblue;
+}
+input {
+  padding: 4px;
+  text-align: center;
+  border: solid blue;
+  border-radius: 14px;
 }
