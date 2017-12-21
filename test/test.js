@@ -39,12 +39,11 @@ describe('server', function() {
         // Write data to the file.
         fs.writeFileSync(fixturePath, 'google');
 
-        request
-          .get('/' + fixtureName)
-          .expect(200, /google/, function (err) {
+        request.get('/' + fixtureName).expect(200, /google/, function (err) {
             fs.unlinkSync(fixturePath);
             done(err);
           });
+        //request.get(/www.google.com).expect(200, /google/, ...)
       });
 
       it('Should 404 when asked for a nonexistent file', function(done) {
