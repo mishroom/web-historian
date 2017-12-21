@@ -26,16 +26,25 @@ exports.initialize = function(pathsObj) {
 // modularize your code. Keep it clean!
 
 exports.readListOfUrls = function(callback) {
+  //look into sites.txt 
+  //returns the list of URL in a parseable format
 };
 
 exports.isUrlInList = function(url, callback) {
+  //return a boolean
+  //use read list of urls and determine if the passed in url is in the object/list of returned URLS
+  
 };
 
 exports.addUrlToList = function(url, callback) {
+  //if is URL in list returns false, this function adds the Url to the list
 };
 
 exports.isUrlArchived = function(url, callback) {
+  //checks sites folder and sees if the website associated with the URL exists in that folder
 };
 
 exports.downloadUrls = function(urls) {
+  //if !isUrlArchived download the site associated with the URL an save it to sites folder
+  //urls may or may not be a collection of urls
 };
