@@ -28,6 +28,7 @@ exports.initialize = function(pathsObj) {
 exports.readListOfUrls = function(callback) {
   //look into sites.txt 
   //returns the list of URL in a parseable format
+  
 };
 
 exports.isUrlInList = function(url, callback) {

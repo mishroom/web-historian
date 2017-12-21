@@ -42,6 +42,13 @@ var actions = {
       console.log(req.url);
       res.writeHead(404, {'Content-Type': 'text/html'});
       res.end();
+    } else if (fs.readFile('./archives/sites.txt', function read(err, data) {
+      return (data.toString());
+    }).includes(req.url)) {
+      res.writeHead(302, {'Content-Type': 'text/html'});
+      res.end();
+      res.done();
+     
     } else {
       console.log(req.url);
       var thisUrl = req.url.slice(5, -4);
@@ -54,10 +61,26 @@ var actions = {
       });
     } 
   },
-  'POST': function(request, response) {
+  'POST': function(req, res) {
     console.log('you made a POST request');
+    req.on('data', function(chunk) {
+      var holder = chunk.toString();
+      var thisUrl = holder.slice(4);
+      console.log(thisUrl);
+      // fs.appendFile('./archives/sites.txt', thisUrl + '\n', function(err) {
+      //   if (err) {
+      //     console.error(err);
+      //   }
+      // });      
+      // res.writeHead(302, {'Content-Type': 'text/html'});
+      // fs.readFile('./archives/sites.txt', function read(err, data) {
+      //  
+      // });
+      
+    });
+    res.end();
   },
-  'OPTIONS': function(request, response) {
+  'OPTIONS': function(req, res) {
     console.log('you made an OPTIONS request');
   }
 };
